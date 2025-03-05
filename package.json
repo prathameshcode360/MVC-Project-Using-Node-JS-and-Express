@@ -1,0 +1,23 @@
+{
+  "name": "mvc-project-using-node-js-and-express",
+  "version": "1.0.0",
+  "description": "Demonstration of How we can use MVC pattern to develop web application using Node JS and Express",
+  "homepage": "https://github.com/prathameshcode360/MVC-Project-Using-Node-JS-and-Express#readme",
+  "bugs": {
+    "url": "https://github.com/prathameshcode360/MVC-Project-Using-Node-JS-and-Express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathameshcode360/MVC-Project-Using-Node-JS-and-Express.git"
+  },
+  "license": "ISC",
+  "author": "Prathamesh Mhatugade",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

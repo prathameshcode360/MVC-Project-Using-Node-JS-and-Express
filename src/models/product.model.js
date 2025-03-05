@@ -9,31 +9,38 @@ export default class ProductModel {
   static getAll() {
     return products;
   }
+  static add(name, desc, price, image) {
+    const newProduct = new ProductModel(
+      products.length + 1,
+      name,
+      desc,
+      price,
+      image
+    );
+    return products.push(newProduct);
+  }
 }
 
-const products = [
-  {
-    id: 1,
-    name: "product-1",
-    desc: "description for product 1",
-    price: 100,
-    image:
-      "https://www.bing.com/th?id=OIP.mdRGPBq8xeMz984elhfyZQHaHa&w=204&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-  },
-  {
-    id: 2,
-    name: "product-2",
-    desc: "description for product 2",
-    price: 200,
-    image:
-      "https://www.bing.com/th?id=OIP.mdRGPBq8xeMz984elhfyZQHaHa&w=204&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-  },
-  {
-    id: 3,
-    name: "product-3",
-    desc: "description for product 3",
-    price: 100,
-    image:
-      "https://www.bing.com/th?id=OIP.mdRGPBq8xeMz984elhfyZQHaHa&w=204&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-  },
+let products = [
+  new ProductModel(
+    1,
+    "Product 1",
+    "Description for Product 1",
+    19.99,
+    "https://m.media-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg"
+  ),
+  new ProductModel(
+    2,
+    "Product 2",
+    "Description for Product 2",
+    29.99,
+    "https://m.media-amazon.com/images/I/51xwGSNX-EL._SX356_BO1,204,203,200_.jpg"
+  ),
+  new ProductModel(
+    3,
+    "Product 3",
+    "Description for Product 3",
+    39.99,
+    "https://m.media-amazon.com/images/I/31PBdo581fL._SX317_BO1,204,203,200_.jpg"
+  ),
 ];

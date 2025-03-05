@@ -6,6 +6,10 @@ import expressEjsLayouts from "express-ejs-layouts";
 const server = express();
 
 const controller = new Controller();
+
+// setting url encoded
+server.use(express.urlencoded({ extended: true }));
+
 // setting up static view
 server.use(express.static("src/views"));
 
@@ -21,6 +25,9 @@ server.get("/", controller.getProducts);
 
 //getting add product page
 server.get("/addProduct", controller.getAddProduct);
+
+//posting new product
+server.post("/", controller.postProduct);
 
 server.listen(3000, () => {
   console.log("Server is listening on port 3000");

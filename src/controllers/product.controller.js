@@ -8,4 +8,10 @@ export default class Controller {
   getAddProduct(req, res) {
     return res.render("addProduct");
   }
+  postProduct(req, res) {
+    const { name, desc, price, image } = req.body;
+    ProductModel.add(name, desc, price, image);
+    const products = ProductModel.getAll();
+    return res.render("index", { products: products });
+  }
 }

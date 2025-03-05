@@ -5,4 +5,7 @@ export default class Controller {
     const products = ProductModel.getAll();
     return res.render("index", { products: products });
   }
+  getAddProduct(req, res) {
+    return res.render("addProduct");
+  }
 }

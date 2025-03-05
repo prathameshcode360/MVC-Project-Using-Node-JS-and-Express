@@ -19,6 +19,9 @@ server.use(expressEjsLayouts);
 // getting product page
 server.get("/", controller.getProducts);
 
+//getting add product page
+server.get("/addProduct", controller.getAddProduct);
+
 server.listen(3000, () => {
   console.log("Server is listening on port 3000");
 });

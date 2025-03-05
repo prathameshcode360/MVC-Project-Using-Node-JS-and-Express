@@ -6,7 +6,7 @@ export default class ProductModel {
     this.price = price;
     this.image = image;
   }
-  static getProducts() {
+  static getAll() {
     return products;
   }
 }

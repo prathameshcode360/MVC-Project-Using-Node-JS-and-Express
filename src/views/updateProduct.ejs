@@ -1,5 +1,5 @@
 <div class="addProduct-container">
-  <form action="/update/<%= product.id %>" method="POST">
+  <form action="/update" method="post">
     <h1>Update Product</h1>
     <% if (errorMessage) { %>
     <div class="alert alert-danger" role="alert"><%= errorMessage %></div>
@@ -34,7 +34,7 @@
       placeholder="Enter image URL"
       value="<%= product.image %>" />
 
-    <input type="hidden" id="id" />
+    <input type="hidden" id="id" name="id" value="<%=product.id%>" />
 
     <button type="submit">Update Product</button>
   </form>

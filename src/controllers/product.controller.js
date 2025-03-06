@@ -27,4 +27,10 @@ export default class Controller {
       return res.send({ msg: "prodcut not found" });
     }
   }
+  postUpdateProduct(req, res) {
+    console.log(req.body);
+    ProductModel.updateProduct(req.body);
+    const products = ProductModel.getAll();
+    return res.render("index", { products: products });
+  }
 }

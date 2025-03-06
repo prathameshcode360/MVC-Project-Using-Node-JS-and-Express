@@ -33,6 +33,9 @@ server.post("/", Validation, controller.postProduct);
 //get update product page
 server.get("/update/:id", controller.getUpdateProduct);
 
+//posting update product
+server.post("/update", controller.postUpdateProduct);
+
 server.listen(3000, () => {
   console.log("Server is listening on port 3000");
 });

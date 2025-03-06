@@ -12,7 +12,7 @@ const controller = new Controller();
 server.use(express.urlencoded({ extended: true }));
 
 // setting up static view
-server.use(express.static("src/views"));
+server.use(express.static("src/public"));
 
 // setting ejs view engine
 server.set("view engine", "ejs");

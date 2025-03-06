@@ -7,6 +7,7 @@
         <th>DESC</th>
         <th>PRICE</th>
         <th>IMAGE</th>
+        <th>ACTIONS</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,9 @@
         <td><%= product.desc %></td>
         <td><%= product.price %></td>
         <td><img src="<%= product.image %>" alt="product-image" /></td>
+        <td>
+          <a href="/update/<%=product.id%>" class="btn btn-warning">update</a>
+        </td>
       </tr>
       <% }) %>
     </tbody>

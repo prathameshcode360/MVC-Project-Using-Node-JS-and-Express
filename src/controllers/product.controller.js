@@ -15,4 +15,16 @@ export default class Controller {
     const products = ProductModel.getAll();
     return res.render("index", { products: products });
   }
+  getUpdateProduct(req, res) {
+    const id = req.params.id;
+    const product = ProductModel.getById(id);
+    if (product) {
+      return res.render("updateProduct", {
+        product: product,
+        errorMessage: null,
+      });
+    } else {
+      return res.send({ msg: "prodcut not found" });
+    }
+  }
 }

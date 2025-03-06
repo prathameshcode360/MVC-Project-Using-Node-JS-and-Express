@@ -1,23 +1,19 @@
-export default function Validation(req, res, next) {
-  const { name, price, image } = req.body;
-  const errors = [];
-  if (!name || name.trim() === "") {
-    errors.push("Please Enter Name");
-  }
+import { body, validationResult } from "express-validator";
 
-  if (!price || parseFloat(price) <= 0) {
-    errors.push("Please Enter Valid Price");
+export default async function expressValidation(req, res, next) {
+  const rules = [
+    body("name").notEmpty().withMessage("Name is required"),
+    body("price")
+      .isFloat({ gt: 0 })
+      .withMessage("Price must be greater than 0"),
+    body("image").isURL().withMessage("Image must be URL"),
+  ];
+  await Promise.all(rules.map((rule) => rule.run(req)));
+  const validationErrors = validationResult(req);
+  if (!validationErrors.isEmpty()) {
+    return res.render("addProduct", {
+      errorMessage: validationErrors.array()[0].msg,
+    });
   }
-
-  try {
-    const validUrl = new URL(image);
-  } catch (error) {
-    errors.push("Invalid URL");
-  }
-
-  if (errors.length > 0) {
-    return res.render("addProduct", { errorMessage: errors[0] });
-  } else {
-    next();
-  }
+  next();
 }

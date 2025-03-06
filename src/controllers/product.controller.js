@@ -28,8 +28,13 @@ export default class Controller {
     }
   }
   postUpdateProduct(req, res) {
-    console.log(req.body);
     ProductModel.updateProduct(req.body);
+    const products = ProductModel.getAll();
+    return res.render("index", { products: products });
+  }
+  deleteProduct(req, res) {
+    const id = req.params.id;
+    ProductModel.delete(id);
     const products = ProductModel.getAll();
     return res.render("index", { products: products });
   }

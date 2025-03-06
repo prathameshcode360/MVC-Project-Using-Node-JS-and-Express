@@ -2,7 +2,7 @@
   <form action="/" method="POST">
     <h1>Add Product</h1>
     <%if(errorMessage){%>
-    <h2><%=errorMessage%></h2>
+    <div class="alert alert-danger" role="alert"><%=errorMessage%></div>
     <% }%>
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Enter product name" />

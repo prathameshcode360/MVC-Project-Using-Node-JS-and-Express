@@ -2,6 +2,7 @@ import express from "express";
 import Controller from "./src/controllers/product.controller.js";
 import path from "path";
 import expressEjsLayouts from "express-ejs-layouts";
+import Validation from "./src/middlewares/validation.middleware.js";
 
 const server = express();
 
@@ -27,7 +28,7 @@ server.get("/", controller.getProducts);
 server.get("/addProduct", controller.getAddProduct);
 
 //posting new product
-server.post("/", controller.postProduct);
+server.post("/", Validation, controller.postProduct);
 
 server.listen(3000, () => {
   console.log("Server is listening on port 3000");

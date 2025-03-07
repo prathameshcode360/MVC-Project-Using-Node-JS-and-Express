@@ -20,7 +20,11 @@
         <td><img src="<%= product.image %>" alt="product-image" /></td>
         <td>
           <a href="/update/<%=product.id%>" class="btn btn-warning">update</a>
-          <a href="/delete/<%=product.id%>" class="btn btn-danger">Delete</a>
+          <button
+            class="btn btn-danger"
+            onclick='deleteProduct("<%=product.id%>")'>
+            Delete
+          </button>
         </td>
       </tr>
       <% }) %>
